@@ -27,7 +27,7 @@ class UserController extends AbstractController
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $user = $form->getData();
-
+            $this->addFlash('success', 'You have successfully submitted your data!');
             return $this->redirectToRoute('app_user');
         }
 
